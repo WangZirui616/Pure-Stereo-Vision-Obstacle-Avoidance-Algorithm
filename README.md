@@ -3,6 +3,12 @@ A pure stereo vision obstacle avoidance framework for mobile robots based on Int
 
 ---
 
+Project Demonstration
+
+
+https://github.com/user-attachments/assets/dd483717-1a3d-43e1-b397-0f24e92915ab
+
+
 ## Overview
 
 This project implements a real-time obstacle avoidance system for the Clearpath Jackal robot using only stereo vision sensing.
@@ -182,57 +188,34 @@ ros2 run realsense_depth_avoidance depth_gap_avoidance \
 
 ---
 
-## Demonstration Video
-
-### Obstacle Avoidance Demo
-
-After uploading a video to GitHub, place it under:
-
-```text
-media/demo.mp4
-```
-
-Then add:
-
-```markdown
-## Demonstration Video
-
-https://github.com/YOUR_USERNAME/pure-stereo-vision-obstacle-avoidance/blob/main/media/demo.mp4
-```
-
-Alternatively, upload the video to YouTube and embed:
-
-```markdown
-## Demonstration Video
-
-[Watch Demo Video](https://youtu.be/xxxxxxxx)
-```
-
-GitHub renders YouTube links much more cleanly than local video files.
-
----
-
 ## Repository Structure
 
 ```text
 pure-stereo-vision-obstacle-avoidance
 │
 ├── README.md
-├── docs
-│   ├── algorithm.md
+├── LICENSE
+├── .gitignore
+│
+├── docs/
 │   ├── installation.md
+│   ├── algorithm.md
 │   ├── run_commands.md
 │   ├── troubleshooting.md
 │   └── hardware.md
 │
-├── src
-├── launch
-├── config
-├── media
-│   ├── demo.mp4
-│   └── screenshots
+├── images/
+│   ├── framework.png
+│   ├── robot.jpg
+│   ├── depth_result.png
+│   ├── yolo_result.png
+│   └── exit_detection.png
 │
-└── images
+├── videos/
+│   └── demo.mp4
+│
+└── src/
+    └── realsense_depth_avoidance/
 ```
 
 ---
