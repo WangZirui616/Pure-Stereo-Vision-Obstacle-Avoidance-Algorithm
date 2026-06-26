@@ -220,7 +220,7 @@ pure-stereo-vision-obstacle-avoidance
 ├── images/
 │   ├── framework.png
 │   ├── robot.jpg
-│   ├── depth_result.png
+│   ├── model.png
 │   ├── yolo_result.png
 │   └── exit_detection.png
 │
