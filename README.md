@@ -119,9 +119,9 @@ Benefits include:
 ### Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/pure-stereo-vision-obstacle-avoidance.git
+git clone https://github.com/WangZirui616/Pure-Stereo-Vision-Obstacle-Avoidance-Algorithm.git
 
-cd pure-stereo-vision-obstacle-avoidance
+cd Pure-Stereo-Vision-Obstacle-Avoidance-Algorithm
 ```
 
 ### Build Workspace
@@ -160,7 +160,7 @@ rgb_camera.color_profile:=640x480x30
 ros2 run jackal_cone_nav yolo_onnx_node \
   --ros-args \
   -p image_topic:=/camera/camera/color/image_raw \
-  -p model_path:=/home/nx2026/yolo_model.onnx \
+  -p model_path:=models/best.pt \
   -p detections_topic:=/yolo26/detections \
   -p confidence_threshold:=0.35
 ```
@@ -188,6 +188,19 @@ ros2 run realsense_depth_avoidance depth_gap_avoidance \
 
 ---
 
+## Trained Model
+
+The trained YOLO model is provided in the `models/` directory.
+
+```text
+models/
+└── best.pt
+```
+
+The TensorRT engine is **not included**, since it depends on the target hardware and TensorRT version.
+
+For deployment on Jetson Orin NX, export the model to ONNX and generate a TensorRT engine on the target platform.
+
 ## Repository Structure
 
 ```text
@@ -214,8 +227,13 @@ pure-stereo-vision-obstacle-avoidance
 ├── videos/
 │   └── demo.mp4
 │
+├── models/
+│   └── best.pt
+│
 └── src/
-    └── realsense_depth_avoidance/
+    ├── realsense_depth_avoidance/
+    └── experimental/
+        └── exit_color_fixed.py
 ```
 
 ---
@@ -245,7 +263,9 @@ Included issues:
 
 ### Exit Recognition
 
-In addition to obstacle avoidance, an exit recognition module has also been developed.
+An experimental exit recognition module is also included under:
+
+src/experimental/
 
 The current approach combines:
 
